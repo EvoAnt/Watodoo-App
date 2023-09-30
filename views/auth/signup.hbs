@@ -1,1 +1,36 @@
-<h2>SignUp</h2>
+<div id="form">
+  <h2>Signup</h2>
+  <form action="/auth/signup" method="POST">
+
+    <label>
+      Full Name:
+      <input type="text" name="fullName" placeholder="Name" />
+    </label>
+
+    <label>
+      Username:
+      <input type="text" name="userName" placeholder="Username" />
+    </label>
+
+    <label>
+      Email:
+      <input type="email" name="email" placeholder="email@email.com" />
+    </label>
+
+    <label>
+      Password:
+      <input type="password" name="password" placeholder="********" />
+    </label>
+
+    <label>
+      Profile Photo:
+      <input type="file" id="profileImage" name="profileImage" />
+    </label>
+
+    <button type="submit">Create account</button>
+
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>
