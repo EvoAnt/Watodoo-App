@@ -3,10 +3,19 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
+/* a {
   color: #00b7ff;
   text-decoration: none;
   font-size: 1.5em;
+} */
+
+#home-screen {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#profile-screen {
+  margin-top: 10px;
 }
 
 form {
@@ -67,20 +76,10 @@ form button:hover {
   justify-content: center;
 }
 
-#to-left {
-  float: left;
-}
-
-#to-left p a {
-  color: #43a3e6;
-  /* font-weight: bold; */
-  font-size: 1.5em;
-}
-
-#logout-form {
+/* #logout-form {
   display: inline;
 }
 
 #logout-form button {
   width: 120px;
-}
+} */
