@@ -18,6 +18,16 @@ body {
   margin-top: 10px;
 }
 
+#community-screen {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#event-screen {
+  margin-top: 10px;
+  text-align: center;
+}
+
 form {
   margin: 30px auto;
   width: 380px;

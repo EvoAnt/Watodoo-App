@@ -19,4 +19,8 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
     });
 });
 
+router.get('/edit-profile', (req, res, next) => {
+  res.render('user/edit-profile.hbs')
+});
+
 module.exports = router;

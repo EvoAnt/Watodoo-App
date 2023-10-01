@@ -11,6 +11,8 @@ var MongoStore = require("connect-mongo");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var authRouter = require("./routes/auth");
+var communityRouter = require('./routes/community');
+var eventsRouter = require('./routes/events');
 
 var app = express();
 
@@ -53,6 +55,8 @@ const dynamicNav = require("./middleware/dynamicNav");
 app.use("/", dynamicNav, indexRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
+app.use("/community", communityRouter);
+app.use("/events", eventsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
