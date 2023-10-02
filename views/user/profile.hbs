@@ -9,7 +9,22 @@
 
     <h3>Saved Events:</h3>
 
-    <h3>My Events:</h3>
+    {{#if events}}
+
+  <h3>My Events:</h3>
+
+  {{#each events}}
+
+    {{name}}
+    
+
+  {{/each}}
+
+{{else}}
+
+  <a href="/events/new">Create an event</a>
+
+{{/if}}
 
     <h3>My Comments:</h3>
 

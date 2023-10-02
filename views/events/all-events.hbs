@@ -2,4 +2,16 @@
 
 <h2>Events</h2>
 
+{{#each events}}
+  <div>
+    <h3>{{name}}</h3>
+    <img src="{{imageUrl}}" alt="event" />
+    <p>added by: {{owner.userName}}</p>
+
+    <a href="/rooms/details/{{_id}}">Event Details</a>
+
+    <hr />
+  </div>
+{{/each}}
+<a href="/events/new">Add Event</a>
 </div>
