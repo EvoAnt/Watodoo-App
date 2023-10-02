@@ -1,19 +1,23 @@
 <div id="profile-screen">
   <h1>My Profile:</h1>
   <h2>{{user.userName}}</h2>
+  <h2>{{user.profileImage}}</h2>
 
-  <form action="">
-    <label>
-      Bio:
-      <input type="text" name="bio" placeholder="Bio" />
-    </label>
+  <form action="/users/edit-profile" method="get">
+
+    <h3>Bio:</h3>
+
+    <h3>Saved Events:</h3>
+
+    <h3>My Events:</h3>
+
+    <h3>My Comments:</h3>
 
     <button>
 
-      <a href="/user/edit-profile">Edit Profile</a>
+      <a href="/users/edit-profile/{{user._id}}">Edit Profile</a>
 
     </button>
-
   </form>
 
 </div>
