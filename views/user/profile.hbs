@@ -1,11 +1,11 @@
 <div id="profile-screen">
   <h1>My Profile:</h1>
-  <h2>{{user.userName}}</h2>
-  <h2>{{user.profileImage}}</h2>
+  <h2>{{userName}}</h2>
+  <h2>{{profileImage}}</h2>
 
-  <form action="/users/edit-profile" method="get">
+  <form action="/users/edit-profile/{{_id}}" method="get">
 
-    <h3>Bio:</h3>
+    <h3>Bio: {{bio}}</h3>
 
     <h3>Saved Events:</h3>
 
@@ -13,11 +13,9 @@
 
     <h3>My Comments:</h3>
 
-    <button>
-
-      <a href="/users/edit-profile/{{user._id}}">Edit Profile</a>
-
-    </button>
+    <a href="/users/edit-profile/{{_id}}" class="button-link">
+      <button type="button">Edit Profile</button>
+    </a>
   </form>
 
 </div>
