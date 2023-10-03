@@ -49,4 +49,9 @@ router.post("/edit-profile/:userId", isLoggedIn, (req, res, next) => {
     });
 });
 
+router.post("/profile/savedEvents", (req, res, next) => {
+  Event.findById(req.params.savedEvents)
+  
+})
+
 module.exports = router;

@@ -4,7 +4,7 @@
   <img class="event-img" src={{event.imageUrl}} />
   <p>{{event.description}}</p>
   <p>{{event.location}}</p>
-  <p>added by: {{event.owner.userName}}</p>
+  <p>created by: {{event.owner.userName}}</p>
 
   {{#if canEdit}}
 
@@ -19,29 +19,33 @@
 
   <hr />
 
-  {{!-- {{#unless canEdit}}
+  {{#unless canEdit}}
 
-    <h4>Leave a review</h4>
-    <form id="review" action="/reviews/new/{{room._id}}" method="post">
-      <label for="review">Review:</label>
-      <input type="text" name="comment" id="review" />
-      <button type="submit">Submit Review</button>
+    <h4>Leave a comment</h4>
+    <form id="comment" action="/comment/new/{{event._id}}" method="post">
+      <label for="comment">Comment:</label>
+      <input type="text" name="comment" id="comment" />
+      <button type="submit">Submit Comment</button>
     </form>
 
   {{/unless}}
 
-  {{#if reviews}}
+  {{#if comments}}
 
-    {{#each reviews}}
+    {{#each comments}}
 
+      <h6>- {{user.userName}}</h6>
       <p>{{comment}}</p>
-      <h6>- {{user.fullName}}</h6>
+      {{#if canDelete}}
+      <a href="/comment/delete/{{_id}}">❌</a>
+      {{/if}}
+      <hr>
 
     {{/each}}
 
   {{else}}
 
-    <p>No reviews yet</p>
+    <p>No comments yet</p>
 
-  {{/if}} --}}
+  {{/if}}
 </div>

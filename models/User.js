@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, SchemaType } = require('mongoose');
 
 const userSchema = new Schema(
     {
@@ -7,7 +7,8 @@ const userSchema = new Schema(
       fullName: String,
       userName: String,
       profileImage: String,
-      bio: String
+      bio: String,
+    savedEvents: [{type: Schema.Types.ObjectId, ref: "Event"}]
     },
     {
       timestamps: true

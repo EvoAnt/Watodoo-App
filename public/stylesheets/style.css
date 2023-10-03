@@ -123,3 +123,108 @@ form button:hover {
   background: #91A6ff;
   text-decoration: none;
 }
+
+/* HOME PAGE STYLES */
+
+#discover {
+  color: ff83f9;
+}
+
+#search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search {
+  width: 40em;
+  height: 2.5em;
+  border-radius: 1em;
+  background: #e6e5e5;
+  border: none;
+  padding: 1em;
+}
+
+#header {
+  color: ff83f9;
+}
+
+#events-date {
+  display: flex;
+  justify-content: space-around;
+}
+
+#today {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #ffffff;
+  width: 8em;
+  height: 2em;
+  border: 0.1em solid #000000;
+  border-radius: 1em;
+  padding: 1em;
+  }
+
+  #this-week {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   background: #ffffff;
+   width: 8em;
+   height: 2em;
+   border: 0.1em solid #000000;
+   border-radius: 1em;
+   padding: 1em;
+    }
+
+  #next-week {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+  background: #ffffff;
+   border: 0.1em solid #000000;
+   width: 8em;
+   height: 2em;
+   border-radius: 1em;
+   padding: 1em;
+    }
+
+  #restaurants-box {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   border: 0.1em solid #000000;
+   /* width: 75em;
+   height: 10em; */
+   border-radius: 3em;
+   padding: 10em;
+    }
+
+/* placeholder color */
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #9a9a9a;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #9a9a9a;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #9a9a9a;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #9a9a9a;
+}

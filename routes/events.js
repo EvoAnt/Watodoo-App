@@ -45,17 +45,34 @@ router.post("/new", isLoggedIn, (req, res, next) => {
 });
 
 router.get("/event-details/:eventId", isLoggedIn, canEdit, (req, res, next) => {
-  Event.findById(req.params.eventId)
-    .populate("owner")
-    .then((event) => {
-      console.log("Found event ===>", event);
-      res.render("events/event-details.hbs", { event, canEdit: req.session.user.canEdit, });
-    })
-    .catch((err) => {
-      console.log(err);
-      next(err);
-    });
-});
+    Event.findById(req.params.eventId)
+      .populate("owner")
+      .populate({
+        path: "comments",
+        populate: { path: "user" },
+      })
+      .then((event) => {
+        console.log("Found event ===>", event);
+
+        let comments = event.comments.map((comment) => {
+            if (comment.user._id.toString() === req.session.user._id) {
+                return {...comment._doc, canDelete: true}
+            } else {
+                return comment
+            }
+        })
+        console.log('comments after map', comments)
+        res.render("events/event-details.hbs", {
+          event,
+          canEdit: req.session.user.canEdit,
+          comments: comments,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        next(err);
+      });
+  });
 
 router.get("/edit/:eventId", isLoggedIn, isOwner, (req, res, next) => {
   Event.findById(req.params.eventId)
