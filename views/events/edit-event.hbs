@@ -1,0 +1,24 @@
+<h2>Edit Event</h2>
+
+<form action="/events/edit/{{_id}}" method="post">
+
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name" value="{{name}}" />
+
+  <label for="name">Event Location:</label>
+  <input type="text" name="location" id="location" value="{{location}}"/>
+
+  <label for="description">Description</label>
+  <input
+    type="text"
+    name="description"
+    id="description"
+    value="{{description}}"
+  />
+
+  <label for="imageUrl">Image</label>
+  <input type="text" name="imageUrl" id="imageUrl" value="{{imageUrl}}" />
+
+  <button type="submit">Edit Room</button>
+
+</form>

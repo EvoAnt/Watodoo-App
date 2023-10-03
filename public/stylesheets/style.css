@@ -28,6 +28,10 @@ body {
   text-align: center;
 }
 
+#event-details-screen {
+  margin-top: 10px;
+}
+
 #edit-profile-screen {
   margin-top: 10px;
   text-align: center;
@@ -57,8 +61,8 @@ form button {
 }
 
 form button {
-  background: #f59627;
-  border: 1px solid #f59627;
+  background: #ff88dc;
+  border: 1px solid #ff88dc;
   border-radius: 4px;
   color: #fff;
   cursor: pointer;
@@ -73,7 +77,7 @@ form button {
 
 form button:hover {
   background: #fff;
-  color: #f59627;
+  color: #ff88dc;
   transition: 0.3s ease background;
 }
 
@@ -98,3 +102,24 @@ form button:hover {
 #logout-form button {
   width: 120px;
 } */
+
+.event-img {
+  height: 20vh;
+}
+
+.btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 14px;
+  background: #ff88dc;
+  padding: 5px 15px 5px 15px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #91A6ff;
+  text-decoration: none;
+}

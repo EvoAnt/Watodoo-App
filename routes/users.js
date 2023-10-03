@@ -9,8 +9,19 @@ const User = require("../models/User");
 router.get("/profile", isLoggedIn, (req, res, next) => {
   console.log("reqsession ", req.session);
   User.findById(req.session.user._id).then((user) => {
+    Event.find({owner: user._id})
+    .then((events) => {
+      res.render("user/profile.hbs", {user, events});
+    })
+    .catch((err) => {
+      console.log(err);
+      next(err);
+    });
     console.log("Found user ===>", user);
-    res.render("user/profile.hbs", user);
+  })
+  .catch((err) => {
+    console.log(err);
+    next(err);
   });
 });
 

@@ -1,0 +1,47 @@
+<div id="event-details-screen">
+
+  <h3>{{event.name}}</h3>
+  <img class="event-img" src={{event.imageUrl}} />
+  <p>{{event.description}}</p>
+  <p>{{event.location}}</p>
+  <p>added by: {{event.owner.userName}}</p>
+
+  {{#if canEdit}}
+
+    <a href="/events/edit/{{event._id}}">Edit Event</a>
+    <span> | </span>
+    <a href="/events/delete/{{event._id}}">Delete Event</a>
+    <span> | </span>
+
+  {{/if}}
+
+  <a href="/events/all-events">Back to All Events</a>
+
+  <hr />
+
+  {{!-- {{#unless canEdit}}
+
+    <h4>Leave a review</h4>
+    <form id="review" action="/reviews/new/{{room._id}}" method="post">
+      <label for="review">Review:</label>
+      <input type="text" name="comment" id="review" />
+      <button type="submit">Submit Review</button>
+    </form>
+
+  {{/unless}}
+
+  {{#if reviews}}
+
+    {{#each reviews}}
+
+      <p>{{comment}}</p>
+      <h6>- {{user.fullName}}</h6>
+
+    {{/each}}
+
+  {{else}}
+
+    <p>No reviews yet</p>
+
+  {{/if}} --}}
+</div>

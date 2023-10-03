@@ -5,10 +5,13 @@
 {{#each events}}
   <div>
     <h3>{{name}}</h3>
-    <img src="{{imageUrl}}" alt="event" />
+    <p>{{location}}</p>
+    <img class="event-img"  src="{{imageUrl}}" alt="event" />
     <p>added by: {{owner.userName}}</p>
+    
+    <button class="btn">Save</button>
 
-    <a href="/rooms/details/{{_id}}">Event Details</a>
+    <a href="/events/event-details/{{_id}}">Event Details</a>
 
     <hr />
   </div>
