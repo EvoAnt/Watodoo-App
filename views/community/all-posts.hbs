@@ -1,0 +1,34 @@
+<div id="community-screen">
+
+  <h2>Community</h2>
+
+  {{#each posts}}
+    <div>
+      <h3>{{name}}</h3>
+      <p>{{location}}</p>
+      <img class="event-img" src="{{imageUrl}}" alt="event" />
+      <p>added by: {{owner.userName}}</p>
+
+      
+        {{!-- need to add form to post to profile --}}
+        <button class="btn">Save</button>
+      
+
+      <a href="/community/post-details/{{_id}}">Post Details</a>
+
+      <hr />
+    </div>
+  {{/each}}
+
+
+  <div class="no-post">
+  <h1>oops!</h1>
+  <h2>So sorry, there are no posts yet!</h2>
+
+  </div>
+
+  <a href="/community/new">
+    <button class="btn">Add Post</button>
+  </a>
+
+</div>

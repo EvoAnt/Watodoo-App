@@ -51,7 +51,14 @@ router.post("/edit-profile/:userId", isLoggedIn, (req, res, next) => {
 
 router.post("/profile/savedEvents", (req, res, next) => {
   Event.findById(req.params.savedEvents)
-  
+  .then((savedEvents) => {
+    console.log("Profile after saved events", savedEvents);
+    res.redirect(`/users/profile`, savedEvents);
+  })
+  .catch((err) => {
+    console.log(err);
+    next(err);
+  });
 })
 
 module.exports = router;

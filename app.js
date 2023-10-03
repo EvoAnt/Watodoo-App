@@ -14,6 +14,7 @@ var authRouter = require("./routes/auth");
 var communityRouter = require('./routes/community');
 var eventsRouter = require('./routes/events');
 const commentRouter = require("./routes/comment")
+
 var app = express();
 
 // view engine setup
