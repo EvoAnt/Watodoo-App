@@ -2,24 +2,24 @@
 
   <h2>Community</h2>
 
+  <a href="/community/new">
+    <button class="btn">Add Post</button>
+  </a>
+
+  <br>
+  <br>
+  
   {{#each posts}}
     <div>
       <h3>{{name}}</h3>
       <p>{{location}}</p>
-      <img class="event-img" src="{{imageUrl}}" alt="event" />
+      <a href="/community/post-details/{{_id}}">
+        <img class="event-img" src="{{imageUrl}}" alt="event" />
+      </a>
       <p>{{description}}</p>
-      <p>added by: {{owner.userName}}</p>
-      
-
-      <a href="/community/post-details/{{_id}}">Post Details</a>
-
+      <p>posted by: {{owner.userName}}</p>
       <hr />
     </div>
   {{/each}}
-
-
-  <a href="/community/new">
-    <button class="btn">Add Post</button>
-  </a>
 
 </div>

@@ -13,7 +13,9 @@
     <div>
       <h3>{{name}}</h3>
       <p>{{location}}</p>
-      <img class="event-img" src="{{imageUrl}}" alt="event" />
+      <a href="/events/event-details/{{_id}}">
+        <img class="event-img" src="{{imageUrl}}" alt="event" />
+      </a>
       <p>{{description}}</p>
       <p>added by: {{owner.userName}}</p>
 
@@ -21,7 +23,6 @@
         <button class="btn" type="submit">Save Event</button>
       </form>
 
-      <a href="/events/event-details/{{_id}}">Event Details</a>
 
       <hr />
     </div>

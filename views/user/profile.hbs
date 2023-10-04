@@ -11,7 +11,9 @@
       <h3>Saved Events:</h3>
       {{#each user.savedEvents}}
         <p>{{name}}</p>
+        <a href="/events/event-details/{{_id}}" target="">
         <img class="event-img" src="{{imageUrl}}" alt="Event Image" />
+        </a>
       {{/each}}
     {{/if}}
 

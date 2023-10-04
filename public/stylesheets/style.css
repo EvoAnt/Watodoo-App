@@ -1,13 +1,20 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Kalam:wght@300&display=swap'); */
+
+* {
+  margin: 0;
 }
 
-/* a {
-  color: #00b7ff;
-  text-decoration: none;
-  font-size: 1.5em;
-} */
+body {
+  padding: 50px;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  /* font-family: 'Jost', sans-serif; */
+}
+
+.body-index {
+  background: #fefef5;
+  margin-top: 1em;
+}
 
 #home-screen {
   margin-top: 10px;
@@ -81,11 +88,6 @@ form button:hover {
   transition: 0.3s ease background;
 }
 
-#form h2 {
-  display: flex;
-  justify-content: center;
-}
-
 .error {
   background: #f02b63;
   box-sizing: border-box;
@@ -93,6 +95,11 @@ form button:hover {
   margin: 20px auto;
   padding: 20px;
   width: 100%;
+}
+
+#form h2 {
+  display: flex;
+  justify-content: center;
 }
 
 .event-img {
@@ -126,6 +133,15 @@ form button:hover {
 
 /* HOME PAGE STYLES */
 
+.watodoo-logo {
+  width: 50px;
+  height: 50px;
+}
+
+#discover-parent {
+  margin-top: 2em;
+}
+
 #discover {
   color: ff83f9;
 }
@@ -145,13 +161,43 @@ form button:hover {
   padding: 1em;
 }
 
+#search-button {
+  margin-left: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #6e84f4;
+  color: #ffffff;
+  width: 8em;
+  height: 2em;
+  border: 1px solid #6e84f4;
+  border-radius: 1.2em;
+  padding: 1.2em;
+  text-decoration: none;
+}
+
+#search-button:hover {
+  /* background: #d87dec;
+  color: #ffffff;
+  border: none; */
+
+  /* background: #ffffff;
+  color: #ff88dc; */
+
+  background: #ffffff;
+  color: #6e84f4;
+
+  transition: 0.3s ease background;
+}
+
 #header {
   color: ff83f9;
 }
 
 #events-date {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 #today {
@@ -159,12 +205,37 @@ form button:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #ffffff;
+  background: #fefef5;
   width: 8em;
   height: 2em;
   border: 0.1em solid #000000;
   border-radius: 1em;
   padding: 1em;
+}
+
+#today:hover {
+  background: #ffffff;
+  color: #000000;
+  transition: 0.3s ease background;
+}
+
+#tomorrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fefef5;
+  width: 8em;
+  height: 2em;
+  border: 0.1em solid #000000;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+#tomorrow:hover {
+  background: #ffffff;
+  color: #000000;
+  transition: 0.3s ease background;
 }
 
 #this-week {
@@ -172,7 +243,7 @@ form button:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #ffffff;
+  background: #fefef5;
   width: 8em;
   height: 2em;
   border: 0.1em solid #000000;
@@ -180,27 +251,47 @@ form button:hover {
   padding: 1em;
 }
 
-#next-week {
+#this-week:hover {
+  background: #ffffff;
+  color: #000000;
+  transition: 0.3s ease background;
+}
+
+#weekends {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #ffffff;
+  background: #fefef5;
   border: 0.1em solid #000000;
   width: 8em;
   height: 2em;
   border-radius: 1em;
   padding: 1em;
+}
+
+#weekends:hover {
+  background: #ffffff;
+  color: #000000;
+  transition: 0.3s ease background;
+}
+
+#box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 #restaurants-box {
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border: 0.1em solid #000000;
-  /* width: 75em;
-   height: 10em; */
+  width: 50em;
+  height: 10em;
   border-radius: 3em;
   padding: 10em;
 }
