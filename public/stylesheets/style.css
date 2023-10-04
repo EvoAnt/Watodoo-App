@@ -81,6 +81,11 @@ form button:hover {
   transition: 0.3s ease background;
 }
 
+#form h2 {
+  display: flex;
+  justify-content: center;
+}
+
 .error {
   background: #f02b63;
   box-sizing: border-box;
@@ -89,19 +94,6 @@ form button:hover {
   padding: 20px;
   width: 100%;
 }
-
-#form h2 {
-  display: flex;
-  justify-content: center;
-}
-
-/* #logout-form {
-  display: inline;
-}
-
-#logout-form button {
-  width: 120px;
-} */
 
 .event-img {
   height: 20vh;
@@ -126,7 +118,7 @@ form button:hover {
 }
 
 .btn:hover {
-  background: #91A6ff;
+  background: #91a6ff;
   text-decoration: none;
 }
 
@@ -171,45 +163,45 @@ form button:hover {
   border: 0.1em solid #000000;
   border-radius: 1em;
   padding: 1em;
-  }
+}
 
-  #this-week {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   background: #ffffff;
-   width: 8em;
-   height: 2em;
-   border: 0.1em solid #000000;
-   border-radius: 1em;
-   padding: 1em;
-    }
-
-  #next-week {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+#this-week {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: #ffffff;
-   border: 0.1em solid #000000;
-   width: 8em;
-   height: 2em;
-   border-radius: 1em;
-   padding: 1em;
-    }
+  width: 8em;
+  height: 2em;
+  border: 0.1em solid #000000;
+  border-radius: 1em;
+  padding: 1em;
+}
 
-  #restaurants-box {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   border: 0.1em solid #000000;
-   /* width: 75em;
+#next-week {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #ffffff;
+  border: 0.1em solid #000000;
+  width: 8em;
+  height: 2em;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+#restaurants-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 0.1em solid #000000;
+  /* width: 75em;
    height: 10em; */
-   border-radius: 3em;
-   padding: 10em;
-    }
+  border-radius: 3em;
+  padding: 10em;
+}
 
 /* placeholder color */
 
