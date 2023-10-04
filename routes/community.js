@@ -4,19 +4,19 @@ var router = express.Router();
 const Post = require("../models/Post");
 
 const { isLoggedIn } = require("../middleware/route-guard");
-const canEdit = require("../middleware/canEdit");
-const isOwner = require("../middleware/isOwner");
+const canEditPost = require("../middleware/canEditPost");
+const isOwnerPost = require("../middleware/isOwnerPost");
 
 router.get("/all-posts", (req, res, next) => {
   Post.find()
     .populate("owner")
     .then((posts) => {
       console.log("Found events ===>", posts);
-      res.render("community/all-posts.hbs", { posts });
-    //   if (posts.length === 0) {
-    //     // If there are no posts, display the "no posts" message
-    //     document.querySelector('.no-post').style.display = 'block';
-    //   }
+      if (!posts.length) {
+        res.render("community/no-posts.hbs");
+      } else {
+        res.render("community/all-posts.hbs", { posts });
+      }
     })
     .catch((err) => {
       console.log(err);
@@ -48,37 +48,42 @@ router.post("/new", isLoggedIn, (req, res, next) => {
     });
 });
 
-router.get("/post-details/:postId", isLoggedIn, canEdit, (req, res, next) => {
-  Post.findById(req.params.postId)
-    .populate("owner")
-    .populate({
-      path: "comments",
-      populate: { path: "user" },
-    })
-    .then((post) => {
-      console.log("Found post ===>", post);
+router.get(
+  "/post-details/:postId",
+  isLoggedIn,
+  canEditPost,
+  (req, res, next) => {
+    Post.findById(req.params.postId)
+      .populate("owner")
+      .populate({
+        path: "comments",
+        populate: { path: "user" },
+      })
+      .then((post) => {
+        console.log("Found post ===>", post);
 
-      let comments = post.comments.map((comment) => {
-        if (comment.user._id.toString() === req.session.user._id) {
-          return { ...comment._doc, canDelete: true };
-        } else {
-          return comment;
-        }
+        let comments = post.comments.map((comment) => {
+          if (comment.user._id.toString() === req.session.user._id) {
+            return { ...comment._doc, canDelete: true };
+          } else {
+            return comment;
+          }
+        });
+        console.log("comments after map", comments);
+        res.render("community/post-details.hbs", {
+          post,
+          canEditPost: req.session.user.canEdit,
+          comments: comments,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        next(err);
       });
-      console.log("comments after map", comments);
-      res.render("community/post-details.hbs", {
-        post,
-        canEdit: req.session.user.canEdit,
-        comments: comments,
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-      next(err);
-    });
-});
+  }
+);
 
-router.get("/edit/:postId", isLoggedIn, isOwner, (req, res, next) => {
+router.get("/edit/:postId", isLoggedIn, isOwnerPost, (req, res, next) => {
   Post.findById(req.params.postId)
     .then((post) => {
       console.log("Found post ===>", post);
@@ -90,7 +95,7 @@ router.get("/edit/:postId", isLoggedIn, isOwner, (req, res, next) => {
     });
 });
 
-router.post("/edit/:postId", isLoggedIn, isOwner, (req, res, next) => {
+router.post("/edit/:postId", isLoggedIn, isOwnerPost, (req, res, next) => {
   Post.findByIdAndUpdate(req.params.postId, req.body, { new: true })
     .then((updatedPost) => {
       console.log("Post after update", updatedPost);
@@ -102,7 +107,7 @@ router.post("/edit/:postId", isLoggedIn, isOwner, (req, res, next) => {
     });
 });
 
-router.get("/delete/:postId", isLoggedIn, isOwner, (req, res, next) => {
+router.get("/delete/:postId", isLoggedIn, isOwnerPost, (req, res, next) => {
   Post.findByIdAndRemove(req.params.postId)
     .then((deletedPost) => {
       console.log("Deleted post ==>", deletedPost);

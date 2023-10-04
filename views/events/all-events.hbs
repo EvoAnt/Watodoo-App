@@ -1,23 +1,29 @@
 <div id="event-screen">
 
-<h2>Events</h2>
+  <h2>Events</h2>
 
-{{#each events}}
-  <div>
-    <h3>{{name}}</h3>
-    <p>{{location}}</p>
-    <img class="event-img"  src="{{imageUrl}}" alt="event" />
-    <p>added by: {{owner.userName}}</p>
-    
-    <form action="" method="post">
+  <a href="/events/new">
+    <button class="btn">Add Event</button>
+  </a>
 
-    <button class="btn">Save</button>
-    </form>
+  <br />
+  <br />
 
-    <a href="/events/event-details/{{_id}}">Event Details</a>
+  {{#each events}}
+    <div>
+      <h3>{{name}}</h3>
+      <p>{{location}}</p>
+      <img class="event-img" src="{{imageUrl}}" alt="event" />
+      <p>{{description}}</p>
+      <p>added by: {{owner.userName}}</p>
 
-    <hr />
-  </div>
-{{/each}}
-<a href="/events/new">Add Event</a>
+      <form action="/users/profile/save-event/{{_id}}" method="post">
+        <button class="btn" type="submit">Save Event</button>
+      </form>
+
+      <a href="/events/event-details/{{_id}}">Event Details</a>
+
+      <hr />
+    </div>
+  {{/each}}
 </div>

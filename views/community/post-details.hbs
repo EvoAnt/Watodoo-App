@@ -6,7 +6,7 @@
   <p>{{post.location}}</p>
   <p>created by: {{post.owner.userName}}</p>
 
-  {{#if canEdit}}
+  {{#if canEditPost}}
 
     <a href="/community/edit/{{post._id}}">Edit Post</a>
     <span> | </span>
@@ -19,7 +19,7 @@
 
   <hr />
 
-  {{#unless canEdit}}
+  {{#unless canEditPost}}
 
     <h4>Leave a comment</h4>
     <form id="comment" action="/comment/new/{{post._id}}" method="post">
@@ -45,7 +45,7 @@
 
   {{else}}
 
-    <p>No comments yet</p>
+    <p>No comments posted</p>
 
   {{/if}}
 </div>

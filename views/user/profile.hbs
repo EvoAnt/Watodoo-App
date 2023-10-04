@@ -7,35 +7,49 @@
   <form action="/users/edit-profile/{{user._id}}" method="get">
 
     <h3>Bio: {{user.bio}}</h3>
-
-    <h3>Saved Events:</h3>
+    {{#if user.savedEvents}}
+      <h3>Saved Events:</h3>
+      {{#each user.savedEvents}}
+        <p>{{name}}</p>
+        <img class="event-img" src="{{imageUrl}}" alt="Event Image" />
+      {{/each}}
+    {{/if}}
 
     {{#if events}}
 
-  <h3>My Events:</h3>
-  {{savedEvents}}
+      <h3>My Events:</h3>
 
-  {{#each events}}
+      {{#each events}}
 
-    <h5>{{name}}</h5>
-    <a href="/events/event-details/{{_id}}" target="">
-          <img class="event-img" src="{{imageUrl}}" alt="Event Image">
+        <h5>{{name}}</h5>
+        <a href="/events/event-details/{{_id}}" target="">
+          <img class="event-img" src="{{imageUrl}}" alt="Event Image" />
         </a>
-    <br>
-    
+        <br />
 
-  {{/each}}
+      {{/each}}
 
-{{else}}
+    {{else}}
 
-  <a href="/events/new">Create an event</a>
+      <a href="/events/new">Create an event</a>
 
-{{/if}}
+    {{/if}}
 
-    <h3>My Comments:</h3>
+    <h3>My Posts:</h3>
+    {{#each posts}}
+
+      <h5>{{name}}</h5>
+      <a href="/community/post-details/{{_id}}" target="">
+        <img class="event-img" src="{{imageUrl}}" alt="Post Image" />
+      </a>
+      <br />
+    {{/each}}
+
+    <br />
+    <br />
 
     <a href="/users/edit-profile/{{user._id}}" class="button-link">
-      <button type="button">Edit Profile</button>
+      <button class="btn" type="button">Edit Profile</button>
     </a>
   </form>
 

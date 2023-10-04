@@ -5,9 +5,14 @@
     method="post"
     {{!-- enctype="multipart/form-data" --}}
   >
-
+    
     <label for="bio">Bio:</label>
     <textarea id="bio" name="bio" placeholder="Bio">{{bio}}</textarea>
+
+    <label>
+      Username:
+      <input type="text" name="userName" value={{userName}}>
+    </label>
 
     <label for="profileImage">Profile Photo:</label>
     {{!-- <input
