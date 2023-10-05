@@ -77,6 +77,7 @@
     top: 42.5%;
     left: 75%;
     transform: translate(-50%, -50%);
+    
 }
 
 form {
@@ -84,11 +85,30 @@ form {
 }
 
 .email-password-login {
-
 border-radius: 2em;
 text-transform: lowercase;
-
 }
+
+.login-button {
+    -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  border: none;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 14px;
+  background: #ff88dc;
+  padding: 5px 15px 5px 15px;
+  text-decoration: none;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.login-button:hover {
+    background: #fff;
+    text-decoration: none;
+    color: #ff83f9;
+  }
 
 .capitalized-l {
     text-transform: capitalize;

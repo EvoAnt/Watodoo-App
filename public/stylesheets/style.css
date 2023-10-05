@@ -116,6 +116,12 @@ form button {
   transition: 0.3s ease background;
 } */
 
+
+/* #form h2 {
+  display: flex;
+  justify-content: center;
+} */
+
 .error {
   background: #f02b63;
   box-sizing: border-box;
@@ -124,12 +130,6 @@ form button {
   padding: 20px;
   width: 100%;
 }
-
-/* #form h2 {
-  display: flex;
-  justify-content: center;
-} */
-
 .event-img {
   background-size: cover;
   height: 35vh;

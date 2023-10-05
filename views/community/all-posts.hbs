@@ -1,4 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <head>
   <link rel="stylesheet" href="/stylesheets/all-posts.css" />
@@ -12,26 +13,37 @@
     <button class="btn">Add Post</button>
   </a>
 
-  <br>
-  <br>
+  <br />
+  <br />
 
-  <div id="post-box-container">
   {{#each posts}}
-  <div class="card">
-    {{!-- <div id="post-box"> ***post-box ID turned off for now***  --}}
-      <p>{{owner.userName}}</p>
-      {{!-- <p>{{profileImage}}</p> --}}
-      <p>{{location}}</p>
-      <a href="/community/post-details/{{_id}}">
-        <img class="post-img" src="{{imageUrl}}" alt="event" />
-      </a>
-      <h5><b>{{name}}</b></h5>
-      <p>{{description}}</p>
-      {{!-- <hr /> --}}
+    <div id="post-box-container">
+      <div class="card">
+        <div class="username-location-text">
+
+          <img
+            class="profile-image"
+            src="https://www.seekpng.com/png/detail/41-410093_circled-user-icon-user-profile-icon-png.png"
+            alt="profile-img"
+          />
+          <p>{{owner.userName}}</p>
+          <br class="pre-line" />
+          <p>{{location}}</p>
+        </div>
+
+        {{! <div id="post-box"> ***post-box ID turned off for now***  }}
+
+        <a href="/community/post-details/{{_id}}">
+          <img class="post-img" src="{{imageUrl}}" alt="event" />
+        </a>
+
+        <div class="caption-text">
+          <h5><b>{{name}}</b></h5>
+          <p>{{description}}</p>
+        </div>
+        {{! <hr /> }}
+      </div>
     </div>
   {{/each}}
-  </div>
-
-  </div>
 
 </div>
