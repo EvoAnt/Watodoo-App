@@ -1,31 +1,90 @@
-<div id="form">
-  <h2>Signup</h2>
-  <form action="/auth/signup" method="POST">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <label>
-      Full Name:
-      <input type="text" name="fullName" placeholder="Name" />
-    </label>
+<head>
+  <link rel="stylesheet" href="/stylesheets/login.css" />
+</head>
 
-    <label>
-      Username:
-      <input type="text" name="userName" placeholder="Username" />
-    </label>
+<body class="login-body">
 
-    <label>
-      Email:
-      <input type="email" name="email" placeholder="email@email.com" />
-    </label>
+  {{! login image }}
 
-    <label>
-      Password:
-      <input type="password" name="password" placeholder="********" />
-    </label>
+  <img class="login-image" src="/images/login.jpg" alt="" />
 
-    <button type="submit">Create account</button>
+  <div class="image-container">
+    <div class="overlay-text">
+      <span class="first-font">Welcome to
+        <br />
+        Watodoo</span>
+      <span class="second-font">log in</span>
+      <br />
+      <span class="third-font">page.</span>
+    </div>
+    <img class="white-logo" src="/images/white-logo.png" alt="" />
+  </div>
 
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
-</div>
+  {{! login image }}
+
+  <div id="form">
+
+    <form action="/auth/signup" method="POST">
+
+      <h2 id="log-in-text">Sign up</h2>
+
+      <label class="email-password-login">
+        <div id="email-text">
+          <p>Full name</p>
+        </div>
+        <input
+          class="email-box"
+          type="text"
+          name="fullName"
+          placeholder="Full name"
+        />
+      </label>
+
+      <label class="email-password-login">
+        <div id="email-text">
+          <p>Username</p>
+        </div>
+        <input
+          class="email-box"
+          type="text"
+          name="userName"
+          placeholder="Username"
+        />
+      </label>
+
+      <label class="email-password-login">
+        <div id="email-text">
+          <p>Email</p>
+        </div>
+        <input
+          class="email-box"
+          type="email"
+          name="email"
+          placeholder="example@gmail.com"
+        />
+      </label>
+
+      <label class="email-password-login">
+        <div id="password-text">
+          <p>Password</p>
+        </div>
+        <input
+          class="password-box"
+          type="password"
+          name="password"
+          placeholder="Password"
+        />
+      </label>
+
+      <button class="email-password-login" type="submit">
+        <span class="capitalized-l">C</span>reate account</button>
+
+      {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+      {{/if}}
+    </form>
+  </div>
+
+</body>

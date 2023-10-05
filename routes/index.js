@@ -4,10 +4,20 @@ var router = express.Router();
 const Restaurant = require("../models/Restaurant");
 
 router.get("/", (req, res, next) => {
+  let results = [{
+    restaurantName: "Pura Vida",
+    address: "1104 S Miami Ave",
+    zipCode: "33130",
+    stateName: "FL",
+    cityName: "Miami",
+    hoursInterval: "Tuesday 3th, 9 am - 8 pm",
+    cuisineType: "Healthy",
+    imageSource: "/images/food.jpeg"
+  }]
   if (!req.session.user) {
     return res.redirect("/auth/login");
   } else {
-    res.render("index", { title: "Watodoo" });
+    res.render("index", { title: "Watodoo", results });
   }
 });
 
