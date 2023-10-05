@@ -8,7 +8,7 @@ const userSchema = new Schema(
     userName: String,
     profileImage: String,
     bio: String,
-    savedEvents: [{ type: Schema.Types.ObjectId, ref: "Event" }],
+    savedEvents: [{ type: Schema.Types.ObjectId, ref: "Restaurant" }],
   },
   {
     timestamps: true,

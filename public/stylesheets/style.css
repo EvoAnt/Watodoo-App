@@ -15,6 +15,12 @@ h1 {
   color: #ff88dc;
 }
 
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
 body {
   padding: 50px;
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
@@ -66,7 +72,7 @@ body {
   justify-content: space-around;
 }
 
-form {
+/* form {
   margin: 30px auto;
   width: 380px;
 }
@@ -77,9 +83,9 @@ form label {
   margin-bottom: 10px;
   text-align: center;
   width: 100%;
-}
+} */
 
-form input,
+/* form input,
 form button {
   box-sizing: border-box;
   font-size: 14px;
@@ -102,13 +108,13 @@ form button {
   text-transform: uppercase;
   transition: 0.3s ease background;
   width: 100%;
-}
+} */
 
-form button:hover {
+/* form button:hover {
   background: #fff;
   color: #ff88dc;
   transition: 0.3s ease background;
-}
+} */
 
 .error {
   background: #f02b63;
@@ -119,10 +125,10 @@ form button:hover {
   width: 100%;
 }
 
-#form h2 {
+/* #form h2 {
   display: flex;
   justify-content: center;
-}
+} */
 
 .event-img {
   background-size: cover;
@@ -177,6 +183,7 @@ form button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 20px;
 }
 
 #search-bar form {
@@ -184,6 +191,7 @@ form button:hover {
   align-items: center;
   flex-wrap: wrap;
   width: 40%;
+  padding-bottom: 20px;
 }
 
 #search {

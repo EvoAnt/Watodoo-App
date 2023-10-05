@@ -2,11 +2,26 @@
   <h1><span class="community-title">Profile:</span></h1>
   <h2>{{user.userName}}</h2>
   <h6>{{user.fullName}}</h6>
-  <h2>{{user.profileImage}}</h2>
+  <img class="profile-img" src={{user.profileImage}} alt="">
 
   <form action="/users/edit-profile/{{user._id}}" method="get">
 
     <h3>Bio: {{user.bio}}</h3>
+
+
+    {{#if user.savedEvents}}
+    <h3>Saved Restaurants:</h3>
+    {{#each user.savedEvents}}
+    <h5>{{restaurantName}}</h5>
+    <img class="event-img" src="/images/food.jpeg" alt="">
+    <br>
+    {{/each}}
+    {{/if}}
+
+  
+
+
+
     {{!-- {{#if user.savedEvents}}
       <h3>Saved Events:</h3>
       {{#each user.savedEvents}}

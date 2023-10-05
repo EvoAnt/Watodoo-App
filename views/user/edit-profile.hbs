@@ -3,7 +3,7 @@
   <form
     action="/users/edit-profile/{{_id}}"
     method="post"
-    {{!-- enctype="multipart/form-data" --}}
+    enctype="multipart/form-data"
   >
     
     <label for="bio">Bio:</label>
@@ -15,13 +15,12 @@
     </label>
 
     <label for="profileImage">Profile Photo:</label>
-    {{!-- <input
+    <input
       type="file"
       id="profileImage"
       name="profileImage"
       accept="image/*"
-      value="{{profileImage}}"
-    /> --}}
+    />
 
     <button type="submit">Save Changes</button>
 

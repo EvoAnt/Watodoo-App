@@ -62,7 +62,11 @@
           <p>{{cityName}}, {{stateName}} {{zipCode}}</p>
           <p>Cuisine Type: {{cuisineType}}</p>
           <p>{{hoursInterval}}</p>
+
+        <form action="/users/profile/save-restaurant/{{_id}}" method="post">
         <button class="home-btn" type="submit">Save</button>
+      </form>
+
         </div>
       </div>
     </div>
