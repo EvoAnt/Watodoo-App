@@ -54,6 +54,18 @@ body {
   text-align: center;
 }
 
+/* #post-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+#post-box-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 form {
   margin: 30px auto;
   width: 380px;
@@ -295,6 +307,7 @@ form button:hover {
 
 #box {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;

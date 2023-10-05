@@ -9,17 +9,20 @@
   <br>
   <br>
 
+  <div id="post-box-container">
   {{#each posts}}
-    <div>
-      <h3>{{name}}</h3>
+    <div id="post-box">
+      <p>{{owner.userName}}</p>
+      {{!-- <p>{{profileImage}}</p> --}}
       <p>{{location}}</p>
       <a href="/community/post-details/{{_id}}">
         <img class="event-img" src="{{imageUrl}}" alt="event" />
       </a>
+      <h3>{{name}}</h3>
       <p>{{description}}</p>
-      <p>posted by: {{owner.userName}}</p>
-      <hr />
+      {{!-- <hr /> --}}
     </div>
   {{/each}}
+  </div>
 
 </div>
