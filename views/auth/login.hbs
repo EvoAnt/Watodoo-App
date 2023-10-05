@@ -1,23 +1,49 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+      <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+
+<body class="login-body">
+
+  {{!-- login image --}}
+
+  <img class="login-image" src="/images/login.jpg" alt="">
+      
+  {{!-- login image --}}
+
 <div id="form">
-  <h2>Login</h2>
 
   <form action="/auth/login" method="POST">
 
-    <label>
-      Email
-      <input type="email" name="email" placeholder="email@email.com" />
+    <h2 id="log-in-text">Log in</h2>
+
+    <label class="email-password-login">
+      <div id="email-text">
+      <p>Email</p>
+      </div>
+      <input class="email-box" type="email" name="email" placeholder="example@gmail.com" />
     </label>
 
-    <label>Password
-      <input type="password" name="password" placeholder="********" />
+    <label class="email-password-login">
+      <div id="password-text">
+      <p>Password</p>
+      </div>
+      <input class="password-box" type="password" name="password" placeholder="Password" />
     </label>
 
-    <a href="/auth/signup">Dont have an account? Click Here</a>
-
-    <button type="submit">Login</button>
+    <button class="email-password-login" type="submit"> <span class="capitalized-l">L</span>og in</button>
+      
+      <div id="click-here">
+    <a class="remove-text-underline" href="/auth/signup">Don't have an account? 
+    <br> 
+    <span id="click-here-color">Click here</span></a>
+      </div>
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
 </div>
+
+</body>

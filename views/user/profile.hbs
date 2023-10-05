@@ -7,7 +7,7 @@
   <form action="/users/edit-profile/{{user._id}}" method="get">
 
     <h3>Bio: {{user.bio}}</h3>
-    {{#if user.savedEvents}}
+    {{!-- {{#if user.savedEvents}}
       <h3>Saved Events:</h3>
       {{#each user.savedEvents}}
         <p>{{name}}</p>
@@ -35,7 +35,7 @@
 
       <a href="/events/new">Create an event</a>
 
-    {{/if}}
+    {{/if}} --}}
 
     <h3>My Posts:</h3>
     {{#each posts}}
