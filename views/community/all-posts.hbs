@@ -1,3 +1,9 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+  <link rel="stylesheet" href="/stylesheets/all-posts.css" />
+</head>
+
 <div id="community-screen">
 
   <h1><span class="community-title">Community </span>Forum</h1>
@@ -11,7 +17,8 @@
 
   <div id="post-box-container">
   {{#each posts}}
-    <div id="post-box">
+  <div class="card">
+    {{!-- <div id="post-box"> ***post-box ID turned off for now***  --}}
       <p>{{owner.userName}}</p>
       {{!-- <p>{{profileImage}}</p> --}}
       <p>{{location}}</p>
@@ -23,6 +30,8 @@
       {{!-- <hr /> --}}
     </div>
   {{/each}}
+  </div>
+
   </div>
 
 </div>

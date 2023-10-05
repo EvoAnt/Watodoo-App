@@ -25,9 +25,9 @@
         id="search"
         type="search"
         name="search"
-        placeholder="Search for a location"
+        placeholder="Search for a type of cuisine"
       />
-      <button id="search-button">Search</button>
+      <button id="search-button" type="submit">Search</button>
     </form>
 
   </div>
@@ -48,118 +48,30 @@
   <br />
 
   <div id="box">
-    {{#if results}}
-        {{#each results}}
-    <div id="restaurants-box">
-      <div id="restaurants-database">
-        <div id="restaurant">
-            <img class="home-img" src={{imageSource}} alt="">
+  {{#if results}}
+  {{#each results}}
+  <div id="restaurants-box">
+    <div id="restaurants-database">
+      <div id="restaurant">
+        <div class="image-container">
+          <img class="home-img" src={{imageSource}} alt="">
+        </div>
+        <div class="attributes">
           <div id="header">{{restaurantName}}</div>
-          {{!-- <div id="event">Amazing Avocado Day Brunch with DJ Franco and DJ
-            Lolita.</div> --}}
-          <div id="address">{{address}}</div>
-          {{cityName}}
-          {{stateName}}
-          {{cuisineType}}
-          <div id="date">{{hoursInterval}}</div>
-
-          <button class="btn" type="submit">Save</button>
-
+          <p>{{address}}</p>
+          <p>{{cityName}}, {{stateName}} {{zipCode}}</p>
+          <p>Cuisine Type: {{cuisineType}}</p>
+          <p>{{hoursInterval}}</p>
+        <button class="home-btn" type="submit">Save</button>
         </div>
       </div>
     </div>
-
-    <br />
-    {{/each}}
-    {{/if}}
-    {{!-- <div id="restaurants-box">
-      <div id="restaurants-database">
-        <div id="restaurant">
-
-          <div id="header">Pura Vida</div>
-          <div id="event">Amazing Avocado Day Brunch with DJ Franco and DJ
-            Lolita.</div>
-          <div id="address">1756 N Bayshore Dr, Miami.</div>
-          <div id="date">Tuesday 3th, 9 am - 8 pm</div>
-
-          <button class="btn" type="submit">Save</button>
-
-        </div>
-      </div>
-    </div>
-
-    <br />
-
-    <div id="restaurants-box">
-      <div id="restaurants-database">
-        <div id="restaurant">
-
-          <div id="header">Pura Vida</div>
-          <div id="event">Amazing Avocado Day Brunch with DJ Franco and DJ
-            Lolita.</div>
-          <div id="address">1756 N Bayshore Dr, Miami.</div>
-          <div id="date">Tuesday 3th, 9 am - 8 pm</div>
-
-          <button class="btn" type="submit">Save</button>
-
-        </div>
-      </div>
-    </div>
-
-    <br />
-
-    <div id="restaurants-box">
-      <div id="restaurants-database">
-        <div id="restaurant">
-
-          <div id="header">Pura Vida</div>
-          <div id="event">Amazing Avocado Day Brunch with DJ Franco and DJ
-            Lolita.</div>
-          <div id="address">1756 N Bayshore Dr, Miami.</div>
-          <div id="date">Tuesday 3th, 9 am - 8 pm</div>
-
-          <button class="btn" type="submit">Save</button>
-
-        </div>
-      </div>
-    </div>
-
-    <br />
-
-    <div id="restaurants-box">
-      <div id="restaurants-database">
-        <div id="restaurant">
-
-          <div id="header">Pura Vida</div>
-          <div id="event">Amazing Avocado Day Brunch with DJ Franco and DJ
-            Lolita.</div>
-          <div id="address">1756 N Bayshore Dr, Miami.</div>
-          <div id="date">Tuesday 3th, 9 am - 8 pm</div>
-
-          <button class="btn" type="submit">Save</button>
-
-        </div>
-      </div>
-    </div>
-
-    <br />
-
-    <div id="restaurants-box">
-      <div id="restaurants-database">
-        <div id="restaurant">
-
-          <div id="header">Pura Vida</div>
-          <div id="event">Amazing Avocado Day Brunch with DJ Franco and DJ
-            Lolita.</div>
-          <div id="address">1756 N Bayshore Dr, Miami.</div>
-          <div id="date">Tuesday 3th, 9 am - 8 pm</div>
-
-          <button class="btn" type="submit">Save</button>
-
-        </div>
-      </div>
-    </div> --}}
-
   </div>
+  <br />
+  {{/each}}
+  {{/if}}
+</div>
+
+
 
 </body>
