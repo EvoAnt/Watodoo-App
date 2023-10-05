@@ -8,14 +8,20 @@
 
   {{#if canEdit}}
 
-    <a href="/events/edit/{{event._id}}">Edit Event</a>
-    <span> | </span>
-    <a href="/events/delete/{{event._id}}">Delete Event</a>
-    <span> | </span>
+    <a href="/events/edit/{{event._id}}">
+        <button class="btn">Edit Event</button>
+    </a>
+   
+    <a href="/events/delete/{{event._id}}">
+        <button class="btn">Delete Event</button>
+    </a>
+    
 
   {{/if}}
 
-  <a href="/events/all-events">Back to All Events</a>
+  <a href="/events/all-events">
+    <button class="btn">Back</button>
+  </a>
 
   <hr />
 

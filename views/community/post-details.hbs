@@ -8,14 +8,20 @@
 
   {{#if canEditPost}}
 
-    <a href="/community/edit/{{post._id}}">Edit Post</a>
-    <span> | </span>
-    <a href="/community/delete/{{post._id}}">Delete Post</a>
-    <span> | </span>
+    <a href="/community/edit/{{post._id}}">
+        <button class="btn">Edit Post</button>
+    </a>
+    
+    <a href="/community/delete/{{post._id}}">
+        <button class="btn">Delete Post</button>
+    </a>
+    
 
   {{/if}}
 
-  <a href="/community/all-posts">Back to All Posts</a>
+  <a href="/community/all-posts">
+    <button class="btn">Back</button>
+  </a>
 
   <hr />
 
