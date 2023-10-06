@@ -1,28 +1,31 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+  <link rel="stylesheet" href="/stylesheets/edit-profile.css" />
+</head>
+
 <div id="edit-profile-screen">
-  <h2>Edit Profile</h2>
+  {{! <img class="watodoo-logo" src="/images/Logo.png" alt="watodoo-logo" />     }}
+  <h2 class="edit-pro">Edit <span class="profile-pro">Profile</span></h2>
   <form
+    class="edit-form"
     action="/users/edit-profile/{{_id}}"
     method="post"
     enctype="multipart/form-data"
   >
-    
+
     <label for="bio">Bio:</label>
     <textarea id="bio" name="bio" placeholder="Bio">{{bio}}</textarea>
 
     <label>
       Username:
-      <input type="text" name="userName" value={{userName}}>
+      <input type="text" name="userName" value={{userName}} />
     </label>
 
     <label for="profileImage">Profile Photo:</label>
-    <input
-      type="file"
-      id="profileImage"
-      name="profileImage"
-      accept="image/*"
-    />
+    <input type="file" id="profileImage" name="profileImage" accept="image/*" />
 
-    <button type="submit">Save Changes</button>
+    <button class="btn" type="submit">Save Changes</button>
 
     {{#if errorMessage}}
       <p>{{errorMessage}}</p>

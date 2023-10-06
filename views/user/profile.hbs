@@ -1,26 +1,39 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+  <link rel="stylesheet" href="/stylesheets/profile.css" />
+</head>
+
 <div id="profile-screen">
   <h1><span class="community-title">Profile:</span></h1>
   <h2>{{user.userName}}</h2>
   <h6>{{user.fullName}}</h6>
-  <img class="profile-img" src={{user.profileImage}} alt="">
+  <img class="profile-img" src={{user.profileImage}} alt="" />
 
   <form action="/users/edit-profile/{{user._id}}" method="get">
 
     <h3>Bio: {{user.bio}}</h3>
 
+    <a href="/users/edit-profile/{{user._id}}" class="button-link">
+      <button class="btn" type="button">Edit Profile</button>
+    </a>
 
-    {{#if user.savedEvents}}
-    <h3>Saved Restaurants:</h3>
-    {{#each user.savedEvents}}
-    <h5>{{restaurantName}}</h5>
-    <img class="event-img" src="/images/food.jpeg" alt="">
-    <br>
-    {{/each}}
-    {{/if}}
+    <br />
+    <br />
 
-  
+    <div class="saved-restaurants">
+      {{#if user.savedEvents}}
+        <h3 class="new-post">Saved
+          <span class="community-title">Restaurants:</span></h3>
+        {{#each user.savedEvents}}
+          <h5>{{restaurantName}}</h5>
+          <img class="event-img" src="/images/food.jpeg" alt="" />
+          <br />
+        {{/each}}
+      {{/if}}
+    </div>
 
-
+    <hr />
 
     {{!-- {{#if user.savedEvents}}
       <h3>Saved Events:</h3>
@@ -52,22 +65,22 @@
 
     {{/if}} --}}
 
-    <h3>My Posts:</h3>
-    {{#each posts}}
+    <div class="post-container">
 
-      <h5>{{name}}</h5>
-      <a href="/community/post-details/{{_id}}" target="">
-        <img class="event-img" src="{{imageUrl}}" alt="Post Image" />
-      </a>
+      <h3 class="new-post">My <span class="community-title">Posts:</span></h3>
+      {{#each posts}}
+
+        <h5>{{name}}</h5>
+        <a href="/community/post-details/{{_id}}" target="">
+          <img class="event-img" src="{{imageUrl}}" alt="Post Image" />
+        </a>
+        <br />
+      {{/each}}
+
       <br />
-    {{/each}}
+      <br />
 
-    <br />
-    <br />
-
-    <a href="/users/edit-profile/{{user._id}}" class="button-link">
-      <button class="btn" type="button">Edit Profile</button>
-    </a>
+    </div>
   </form>
 
 </div>

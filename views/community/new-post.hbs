@@ -1,6 +1,12 @@
-<h2>Add a New <span class="community-title">Post</span></h2>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<form action="/community/new" method="post">
+<head>
+  <link rel="stylesheet" href="/stylesheets/new-post.css" />
+</head>
+
+<h2 class="new-post">Add a New <span class="community-title">Post</span></h2>
+
+<form class="edit-form" action="/community/new" method="post">
 
   <label for="name">Caption:</label>
   <input type="text" name="name" id="name" />
@@ -8,19 +14,19 @@
   <label for="name">Location:</label>
   <input type="text" name="location" id="location" />
 
-  {{!-- <label for="description">Description:</label>
+  {{! <label for="description">Description:</label>
   <textarea
     name=""
     id="description"
     name="description"
     cols="55"
     rows="5"
-  ></textarea> --}}
-  <br>
-  <br>
+  ></textarea> }}
+  <br />
+  <br />
   <label for="imageUrl">Image:</label>
   <input type="text" name="imageUrl" id="imageUrl" />
 
-  <button type="submit">Add Post</button>
+  <button class="btn" type="submit">Add Post</button>
 
 </form>

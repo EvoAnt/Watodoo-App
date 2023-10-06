@@ -1,0 +1,102 @@
+body {
+  background-color: #fefef5;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+#profile-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+#header {
+  position: relative;
+  height: 20rem;
+  width: 100%;
+  background: url("/images/profile-header.jpg");
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+#header-container {
+  margin-left: 25%;
+  display: flex;
+  flex-direction: row;
+}
+
+.avatar-container {
+  width: 12rem;
+  height: 12rem;
+}
+
+.avatar-circle {
+  border-radius: 100%;
+  width: 12rem;
+  height: 12rem;
+  border-color: red;
+  background-color: red;
+  border: 1px;
+  z-index: 10;
+  position: absolute;
+  bottom: -40px;
+}
+
+.avatar {
+  background: url("/images/profile-image.jpg");
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  background-clip: content-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.avatar-edit {
+  border-radius: 100%;
+  width: 2.3rem;
+  height: 2.3rem;
+  z-index: 10;
+  border: 1px;
+  background-color: #ff83f9;
+  top: 0;
+  right: 10;
+  position: absolute;
+}
+
+.avatar-text {
+  z-index: 12;
+  font-size: 5em;
+}
+
+.avatar-text-container {
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-direction: column;
+  color: white;
+}
+
+.location-text-container {
+  position: relative;
+  color: #ff83f9;
+  top: 15%;
+  left: 7.5%;
+}
+
+.saved-restaurants {
+  margin-top: 20px;
+}
+
+.post-container {
+  margin-top: 20px;
+}
+
+hr {
+  color: #ff83f9;
+}
