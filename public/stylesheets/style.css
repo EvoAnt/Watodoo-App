@@ -463,10 +463,11 @@ form button {
 
 /* Style the footer element */
 footer {
-  background-color: #ff88dc;
+  background-color: #fefef5;
   color: #fff;
   padding: 0;
   text-align: center;
+  height: 10vh;
 }
 
 /* Style the footer content container */
@@ -503,7 +504,7 @@ footer {
 }
 
 .footer-links a {
-  color: #fff;
+  color: black;
   text-decoration: none;
   transition: color 0.3s;
 }
