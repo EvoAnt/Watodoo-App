@@ -27,6 +27,8 @@
           <span class="community-title">Restaurants:</span></h3>
         {{#each user.savedEvents}}
           <h5>{{restaurantName}}</h5>
+          <p>{{address}}</p>
+          <p>{{cityName}}, {{stateName}} {{zipCode}}</p>
           <img class="event-img" src="/images/food.jpeg" alt="" />
           <br />
         {{/each}}
