@@ -7,6 +7,7 @@ const { isLoggedIn } = require("../middleware/route-guard");
 const canEditPost = require("../middleware/canEditPost");
 const isOwnerPost = require("../middleware/isOwnerPost");
 
+
 router.get("/all-posts", (req, res, next) => {
   Post.find()
     .populate("owner")

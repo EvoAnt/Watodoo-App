@@ -15,35 +15,44 @@
 
   <br />
   <br />
+  <div class="posts-container">
+    {{#each posts}}
+      <div id="post-box-container">
+        <div class="card">
+          <div class="username-location-text">
+            {{#if owner.profileImage}}
+              <img
+                class="profile-image"
+                src="{{owner.profileImage}}"
+                alt="profile-img"
+              />
+            {{else}}
+              <img
+                class="profile-image"
+                src="https://www.seekpng.com/png/detail/41-410093_circled-user-icon-user-profile-icon-png.png"
+                alt="profile-img"
+              />
+            {{/if}}
 
-  {{#each posts}}
-    <div id="post-box-container">
-      <div class="card">
-        <div class="username-location-text">
+            <p>{{owner.userName}}</p>
+            <br class="pre-line" />
+            <p>{{location}}</p>
+          </div>
 
-          <img
-            class="profile-image"
-            src="https://www.seekpng.com/png/detail/41-410093_circled-user-icon-user-profile-icon-png.png"
-            alt="profile-img"
-          />
-          <p>{{owner.userName}}</p>
-          <br class="pre-line" />
-          <p>{{location}}</p>
+          {{! <div id="post-box"> ***post-box ID turned off for now***  }}
+
+          <a href="/community/post-details/{{_id}}">
+            <img class="post-img" src="{{imageUrl}}" alt="event" />
+          </a>
+
+          <div class="caption-text">
+            <h5><b>{{name}}</b></h5>
+            <p>{{description}}</p>
+          </div>
+          {{! <hr /> }}
         </div>
-
-        {{! <div id="post-box"> ***post-box ID turned off for now***  }}
-
-        <a href="/community/post-details/{{_id}}">
-          <img class="post-img" src="{{imageUrl}}" alt="event" />
-        </a>
-
-        <div class="caption-text">
-          <h5><b>{{name}}</b></h5>
-          <p>{{description}}</p>
-        </div>
-        {{! <hr /> }}
       </div>
-    </div>
-  {{/each}}
+    {{/each}}
+  </div>
 
 </div>

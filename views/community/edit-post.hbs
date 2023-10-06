@@ -1,14 +1,16 @@
-<h2>Edit Post</h2>
+<div id="edit-post-div">
 
-<form action="/community/edit/{{_id}}" method="post">
+  <h2>Edit Post</h2>
 
-  <label for="name">Caption</label>
-  <input type="text" name="name" id="name" value="{{name}}" />
+  <form class="post-form" action="/community/edit/{{_id}}" method="post">
 
-  <label for="name">Location:</label>
-  <input type="text" name="location" id="location" value="{{location}}"/>
+    <label for="name">Caption</label>
+    <input type="text" name="name" id="name" value="{{name}}" />
 
-  {{!-- <label for="description">Description</label>
+    <label for="name">Location:</label>
+    <input type="text" name="location" id="location" value="{{location}}" />
+
+    {{!-- <label for="description">Description</label>
   <textarea
     name=""
     id="description"
@@ -17,11 +19,12 @@
     rows="5"
     value="{{description}}"
   ></textarea> --}}
-  
 
-  <label for="imageUrl">Image</label>
-  <input type="text" name="imageUrl" id="imageUrl" value="{{imageUrl}}" />
+    <label for="imageUrl">Image</label>
+    <input type="text" name="imageUrl" id="imageUrl" value="{{imageUrl}}" />
 
-  <button type="submit">Save Changes</button>
+    <button class="btn" type="submit">Save Changes</button>
 
-</form>
+  </form>
+
+</div>
