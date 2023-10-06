@@ -6,7 +6,7 @@
 
 <h2 class="new-post">Add a New <span class="community-title">Post</span></h2>
 
-<form class="edit-form" action="/community/new" method="post">
+<form class="edit-form" action="/community/new" method="post" enctype="multipart/form-data">
 
   <label for="name">Caption:</label>
   <input type="text" name="name" id="name" />
@@ -25,7 +25,7 @@
   <br />
   <br />
   <label for="imageUrl">Image:</label>
-  <input type="text" name="imageUrl" id="imageUrl" />
+  <input type="file" name="imageUrl" id="imageUrl" />
 
   <button class="btn" type="submit">Add Post</button>
 

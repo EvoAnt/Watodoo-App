@@ -43,9 +43,16 @@ router.get("/edit-profile/:userId", isLoggedIn, (req, res, next) => {
 });
 
 router.post("/edit-profile/:userId", isLoggedIn, fileUploader.single('profileImage'), (req, res, next) => {
-  console.log(req.file.path)
   const { bio, userName } = req.body
-  User.findByIdAndUpdate(req.session.user._id, {userName, bio, profileImage: req.file.path}, { new: true })
+  
+  let image
+  if (req.file) {
+    console.log(req.file.path)
+    image = req.file.path
+  } else {
+    image = req.session.user.profileImage
+  }
+  User.findByIdAndUpdate(req.session.user._id, {userName, bio, profileImage: image}, { new: true })
     .then((updatedProfile) => {
       console.log("Profile after update", updatedProfile);
       res.redirect(`/users/profile`);

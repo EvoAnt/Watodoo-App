@@ -1,6 +1,6 @@
 <div id="event-details-screen">
 
-  <p>{{post.owner.userName}}</p>
+  <h3>{{post.owner.userName}}</h3>
   <p>{{post.location}}</p>
   <img class="event-img" src={{post.imageUrl}} />
   <p>{{post.name}}</p>
@@ -34,6 +34,7 @@
       <button class="btn" type="submit">Submit Comment</button>
     </form>
 
+  <br>
   {{/unless}}
 
   {{#if comments}}

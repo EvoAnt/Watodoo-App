@@ -7,6 +7,8 @@ const { isLoggedIn } = require("../middleware/route-guard");
 const canEditPost = require("../middleware/canEditPost");
 const isOwnerPost = require("../middleware/isOwnerPost");
 
+const fileUploader = require('../config/cloudinary.config');
+
 
 router.get("/all-posts", (req, res, next) => {
   Post.find()
@@ -29,14 +31,22 @@ router.get("/new", isLoggedIn, (req, res, next) => {
   res.render("community/new-post.hbs");
 });
 
-router.post("/new", isLoggedIn, (req, res, next) => {
-  const { name, location, description, imageUrl } = req.body;
+router.post("/new", isLoggedIn, fileUploader.single('imageUrl'), (req, res, next) => {
+  const { name, location, description } = req.body;
+
+  let image
+  if (req.file) {
+    console.log("cloudinary return", req.file.path)
+    image = req.file.path
+  } else {
+    image = ''
+  }
 
   Post.create({
     name,
     location,
     description,
-    imageUrl,
+    imageUrl: image,
     owner: req.session.user._id,
   })
     .then((createdPost) => {
