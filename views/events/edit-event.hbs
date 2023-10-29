@@ -1,6 +1,6 @@
 <h2>Edit Event</h2>
 
-<form action="/events/edit/{{_id}}" method="post">
+<form class="post-form" action="/events/edit/{{_id}}" method="post">
 
   <label for="name">Name</label>
   <input type="text" name="name" id="name" value="{{name}}" />
@@ -19,6 +19,11 @@
   <label for="imageUrl">Image</label>
   <input type="text" name="imageUrl" id="imageUrl" value="{{imageUrl}}" />
 
-  <button type="submit">Save Changes</button>
+  <br>
+
+  <div>
+
+  <button class="btn" type="submit">Save Changes</button>
+  </div>
 
 </form>

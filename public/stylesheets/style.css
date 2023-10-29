@@ -25,6 +25,7 @@ body {
   padding: 50px;
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
   font-family: 'Jost', sans-serif;
+  background-color: #fefef5;
 }
 
 .body-index {
@@ -49,6 +50,7 @@ body {
 #event-screen {
   margin-top: 10px;
   text-align: center;
+  background-color: #fefef5;
 }
 
 #event-details-screen {
@@ -537,4 +539,17 @@ footer {
   margin: 0;
   font-size: 14px;
   color: #fff;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  width: 30%;
+  
+}
+
+#edit-post-div {
+  margin-top: 10px;
 }
